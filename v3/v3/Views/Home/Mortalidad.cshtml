@@ -1,0 +1,51 @@
+﻿@model IEnumerable<v3.Models.MortalidadEntidad>
+
+@{
+    ViewBag.Title = "Mortalidad";
+}
+
+<h2>Mortalidad</h2>
+
+ 
+<table class="table">
+    <tr>
+        <th>
+            País
+        </th>
+        <th>
+             Región
+        </th>
+        <th>
+            Año
+        </th>
+        <th>
+            Población Total
+        </th>
+        <th>
+            Tasa de Mortalidad
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Longname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Region)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fec_year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Value_tot_pb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tasa_mortalidad)
+        </td>
+ 
+    </tr>
+}
+
+</table>
